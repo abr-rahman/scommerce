@@ -1,0 +1,17 @@
+remove - 
+$table->string('size')->nullable();
+$table->foreignIdFor(Attribute::class)->nullable()->constrained()->onDelete('cascade');
+$table->foreignIdFor(BulkVariant::class)->nullable()->constrained()->onDelete('cascade');
+$table->foreignIdFor(Color::class)->nullable()->constrained()->onDelete('cascade');
+$table->foreignIdFor(Size::class)->nullable()->constrained()->onDelete('cascade');
+$table->string('quantity')->nullable();
+
+add - $table->string('a_status')->default(1);
+add - $table->integer('numbering')->nullable()->unique();
+
+
+orders = table
+
+add - payable_amount
+add - due_amount
+add - thana

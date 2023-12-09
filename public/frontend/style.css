@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700&display=swap');
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+    font-family: 'khay';
+    src: url('./public/font/BAGIQUtrial-Regular.ttf');
+}
+
+body{
+    font-family: 'Exo 2', sans-serif !important;
+}
+
+
+
+/* scroll bar */
+::-webkit-scrollbar-track {
+    background-color: #deeaee;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 5px;
+    background-color: #a8a8a8;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-fave-500;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-fave-500;
+}
+
+::-webkit-scrollbar-thumb:active {
+    @apply bg-fave-500;
+}
+
+
+
+
+
+
+
+/* menu, sub menu */
+.child_menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    /* background-color: #fff; */
+    margin: 0 20px;
+}
+
+.show {
+    max-height: 300px;
+    height: auto;
+    transition: 0.7s;
+    overflow-y: auto;
+}
+
+.aboutVoltme{
+	text-align: justify;
+}
+
+.aboutVoltMeDetails{
+	text-align: justify;
+}
+
+
+
+@media only screen and (max-width: 600px){
+	.aboutVoltme{
+		text-align: center;
+	}
+	.aboutVoltMeDetails{
+		text-align: center;
+	}
+}
+@media only screen and (max-width: 768px){
+	.userDsahboard{
+		margin-bottom: 200px !important;
+	}
+}
+@media only screen and (max-width: 640px){
+	.userDsahboard{
+		margin-bottom: 100px !important;
+	}
+}
+
+
+/* hero slider */
+.swiper-pagination-bullet-active {
+    background-color: #ff9900 !important;
+}
+
+.swiper-pagination-bullet {
+    width: 25px !important;
+    height: 5px !important;
+    border-radius: 0 !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 30px !important;
+    @apply !text-fave-500
+}
+
+
+/* animate class */
+.swiper-slide-active .slider-sub-title {
+    animation: fadeInRight 0.7s;
+}
+.swiper-slide-active .slider-descriptions {
+    animation: fadeInRight 0.6s;
+}
+.swiper-slide-active .slider-button {
+    animation: fadeInRight 0.5s;
+}
+
+
+/* .tab_content{
+    display: none;
+}
+.tab_content.active{
+    display: block;
+} */
+
+
+
+
+/* Price range  */
+.range-slider {
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	position: relative;
+	height: 6em;
+}
+
+.range-slider svg,
+.range-slider input[type=range] {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+input[type=number] {
+	border: 1px solid #ddd;
+	text-align: center;
+	font-size: 1em;
+	-moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type=number]:invalid,
+input[type=number]:out-of-range {
+	border: 2px solid #ff6347;
+}
+
+input[type=range] {
+	-webkit-appearance: none;
+	width: 100%;
+}
+
+input[type=range]:focus {
+	outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+	@apply bg-fave-500;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+	@apply bg-fave-500;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+	@apply bg-fave-500;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 5px;
+	cursor: pointer;
+	animate: 0.2s;
+	@apply bg-fave-500;
+	border-radius: 1px;
+	box-shadow: none;
+	border: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	z-index: 2;
+	position: relative;
+	box-shadow: 0px 0px 0px #000;
+	border: 1px solid #ff9900;
+	height: 18px;
+	width: 18px;
+	border-radius: 25px;
+	@apply bg-fave-400;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -7px;
+}
+
+input[type=range]::-moz-range-track {
+	width: 100%;
+	height: 5px;
+	cursor: pointer;
+	animate: 0.2s;
+	@apply bg-fave-500;
+	border-radius: 1px;
+	box-shadow: none;
+	border: 0;
+}
+
+input[type=range]::-moz-range-thumb {
+	z-index: 2;
+	position: relative;
+	box-shadow: 0px 0px 0px #000;
+	border: 1px solid #eb8d00;
+	height: 18px;
+	width: 18px;
+	border-radius: 25px;
+	@apply bg-fave-400;
+	cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+	width: 100%;
+	height: 5px;
+	cursor: pointer;
+	animate: 0.2s;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+input[type=range]::-ms-fill-lower,
+input[type=range]::-ms-fill-upper {
+	@apply bg-fave-500;
+	border-radius: 1px;
+	box-shadow: none;
+	border: 0;
+}
+
+input[type=range]::-ms-thumb {
+	z-index: 2;
+	position: relative;
+	box-shadow: 0px 0px 0px #000;
+	border: 1px solid #ff9900;
+	height: 18px;
+	width: 18px;
+	border-radius: 25px;
+	@apply bg-fave-400;
+	cursor: pointer;
+}

@@ -1,0 +1,70 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ namespacedModel }};
+use {{ rootNamespace }}Http\Controllers\Controller;
+use {{ namespacedRequests }}
+use Illuminate\Http\Request;
+
+class {{ class }} extends Controller
+{
+    protected $serviceName;
+
+    public function __construct(serviceNameInterface $serviceName)
+    {
+        $this->serviceName = $serviceName;
+    }
+
+    public function index(Request $request, TataTableName $dataTable)
+    {
+        return $dataTable->render('admin.viewFolder.index');
+    }
+
+    public function create()
+    {
+        return view('admin.viewFolder.create');
+    }
+
+    public function store({{ storeRequest }} $request)
+    {
+        $this->serviceName->store($request->validated());
+        return back()->with('success', 'Created successfully!');
+    }
+
+    public function show({{ model }} ${{ modelVariable }})
+    {
+        //
+    }
+
+    public function edit({{ model }} ${{ modelVariable }})
+    {
+        return view('admin.viewFolder.edit', compact({{ modelVariable }}));
+    }
+
+    public function update({{ updateRequest }} $request, $id)
+    {
+        $this->serviceName->update($request->validated(), $id);
+        return back()->with('success', 'Updated successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $this->serviceName->delete($id);
+        return response()->json('Deleted successfully!');
+    }
+
+    public function active($id)
+    {
+        $this->serviceName->statusInactive($id);
+        return response()->json(['Status changed successfully!']);
+    }
+
+    public function inActive($id)
+    {
+        $this->serviceName->statusActive($id);
+        return response()->json(['Status changed successfully!']);
+    }
+
+
+}
